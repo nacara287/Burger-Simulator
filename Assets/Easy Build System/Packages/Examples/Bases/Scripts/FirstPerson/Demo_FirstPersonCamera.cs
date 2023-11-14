@@ -31,11 +31,7 @@ namespace EasyBuildSystem.Examples.Bases.Scripts.FirstPerson
             m_CharacterTargetRot = transform.localRotation;
             m_CameraTargetRot = m_Camera.transform.localRotation;
 
-            if (m_LockCursor)
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-            }
+          
         }
 
         void LateUpdate()

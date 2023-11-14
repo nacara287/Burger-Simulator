@@ -5,8 +5,10 @@ using UnityEngine;
 public class Manager : MonoBehaviour
 {
     public static Manager instance;
-    public float Money;
     public bool LockControls;
+    public InventoryItem itemPrefab;
+    public ItemDatabase database;
+
     private void Awake()
     {if (instance != null)
             Destroy(this);
@@ -21,6 +23,14 @@ public class Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (LockControls)
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+                Cursor.lockState = CursorLockMode.Locked;
+        }
         
     }
     public void setLockControls(bool col)

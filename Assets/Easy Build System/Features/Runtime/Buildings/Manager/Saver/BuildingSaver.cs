@@ -310,7 +310,7 @@ namespace EasyBuildSystem.Features.Runtime.Buildings.Manager.Saver
                                         loadedBuildingParts.Add(BuildingManager.Instance.PlaceBuildingPart(buildingPart,
                                     saveData.Data[i].Position,
                                     saveData.Data[i].Rotation,
-                                    saveData.Data[i].Scale, saveData.Data[i].InventoryID, saveData.Data[i].InventorySize, false));
+                                    saveData.Data[i].Scale, saveData.Data[i].InventoryID, false));
 #elif PUNV2
                                     loadedBuildingParts.Add(BuildingManager.Instance.PlaceBuildingPart(buildingPart,
                                         saveData.Data[i].Position,
@@ -352,7 +352,7 @@ namespace EasyBuildSystem.Features.Runtime.Buildings.Manager.Saver
                             loadedBuildingParts.Add(BuildingManager.Instance.PlaceBuildingPart(buildingPart,
                                      saveData.Data[i].Position,
                                      saveData.Data[i].Rotation,
-                                     saveData.Data[i].Scale, saveData.Data[i].InventoryID, saveData.Data[i].InventorySize, false));
+                                     saveData.Data[i].Scale, saveData.Data[i].InventoryID, false));
 
                         }
                         else

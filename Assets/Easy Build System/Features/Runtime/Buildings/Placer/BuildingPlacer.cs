@@ -37,8 +37,8 @@ namespace EasyBuildSystem.Features.Runtime.Buildings.Placer
         BuildMode m_BuildMode;
         public BuildMode GetBuildMode { get { return m_BuildMode; } }
 
-        [SerializeField] BaseInputHandler m_InputHandler;
-        public BaseInputHandler GetInputHandler
+        //[SerializeField] BaseInputHandler m_InputHandler;
+     /*   public BaseInputHandler GetInputHandler
         {
             get
             {
@@ -52,7 +52,7 @@ namespace EasyBuildSystem.Features.Runtime.Buildings.Placer
 
             set { m_InputHandler = value; }
         }
-
+     */
         [Serializable]
         public class RaycastSettings
         {
@@ -338,7 +338,7 @@ namespace EasyBuildSystem.Features.Runtime.Buildings.Placer
             m_SnappingSettings.LayerMask |= (1 << LayerMask.NameToLayer("Socket"));
         }
 
-        void OnDestroy()
+      /*  void OnDestroy()
         {
             if (m_InputHandler != null)
             {
@@ -347,7 +347,7 @@ namespace EasyBuildSystem.Features.Runtime.Buildings.Placer
                     DestroyImmediate(m_InputHandler);
                 }
             }
-        }
+        }*/
 
         void OnDrawGizmosSelected()
         {
@@ -589,7 +589,7 @@ namespace EasyBuildSystem.Features.Runtime.Buildings.Placer
             BuildingManager.Instance.PlaceBuildingPart(GetSelectedBuildingPart,
                 m_CurrentPreview.transform.position,
                 m_CurrentPreview.transform.eulerAngles,
-                m_CurrentPreview.transform.localScale,"",0);
+                m_CurrentPreview.transform.localScale,"");
 
             if (m_LastBuildMode == BuildMode.EDIT)
             {

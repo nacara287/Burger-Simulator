@@ -205,9 +205,7 @@ namespace EasyBuildSystem.Features.Runtime.Buildings.Part
             [SerializeField, DontDrawIf("m_InventoryID", true, DontDrawIfAttribute.DisablingType.READ_ONLY)] string m_InventoryID;
             public string InventoryID { get { return m_InventoryID; } set { m_InventoryID = value; } }
 
-            [SerializeField, DontDrawIf("m_InventorySize", true, DontDrawIfAttribute.DisablingType.READ_ONLY)] int m_InventorySize;
-            public int InventorySize { get { return m_InventorySize; } set { m_InventorySize = value; } }
-
+            
 
             [SerializeField, DontDrawIf("m_Position", true, DontDrawIfAttribute.DisablingType.READ_ONLY)] Vector3 m_Position;
             public Vector3 Position { get { return m_Position; } set { m_Position = value; } }
@@ -905,7 +903,7 @@ namespace EasyBuildSystem.Features.Runtime.Buildings.Part
                 Rotation = transform.eulerAngles,
                 Scale = transform.localScale,
                InventoryID = inventory.InventoryID, 
-                InventorySize = inventory.InventorySize ,
+          
 
             };
         }

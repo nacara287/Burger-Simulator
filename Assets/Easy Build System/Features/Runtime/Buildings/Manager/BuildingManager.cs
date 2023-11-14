@@ -308,7 +308,7 @@ namespace EasyBuildSystem.Features.Runtime.Buildings.Manager
         /// <summary>
         /// Place a new Building Part.
         /// </summary>
-        public BuildingPart PlaceBuildingPart(BuildingPart buildingPart, Vector3 position, Vector3 rotation, Vector3 scale,string InventoryID,int InventorySize, bool createNewGroup = true)
+        public BuildingPart PlaceBuildingPart(BuildingPart buildingPart, Vector3 position, Vector3 rotation, Vector3 scale,string InventoryID, bool createNewGroup = true)
         {
             if (buildingPart == null)
             {
@@ -318,10 +318,10 @@ namespace EasyBuildSystem.Features.Runtime.Buildings.Manager
             BuildingPart instancedBuildingPart = Instantiate(buildingPart.gameObject,
                 position, Quaternion.Euler(rotation)).GetComponent<BuildingPart>();
 
-      if (instancedBuildingPart.GetComponent<InventoryInfo>() != null&& instancedBuildingPart.GetComponent<InventoryInfo>().InventorySize != 0)
+      if (instancedBuildingPart.GetComponent<InventoryInfo>() != null)
             {
                 instancedBuildingPart.GetComponent<InventoryInfo>().InventoryID = InventoryID;
-                instancedBuildingPart.GetComponent<InventoryInfo>().InventorySize = InventorySize;
+               
 
             }
              

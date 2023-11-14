@@ -186,7 +186,7 @@ namespace EasyBuildSystem.Features.Runtime.Buildings.Socket.Editor
                                         {
                                             BuildingSocket.SnappingPointSettings offsetSettings = buildingSocket.GetOffset(buildingPart);
                                             BuildingPart instancedBuildingPart = BuildingManager.Instance.PlaceBuildingPart(buildingPart,
-                                                offsetSettings.Position, offsetSettings.Rotation, offsetSettings.Scale,"",0, false);
+                                                offsetSettings.Position, offsetSettings.Rotation, offsetSettings.Scale,"", false);
                                             buildingSocket.Snap(instancedBuildingPart, offsetSettings, Vector3.zero);
                                         }
                                     }

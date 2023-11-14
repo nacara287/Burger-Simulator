@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f01cccb2c080ea45b4d365239347695, type: 3}
+  m_Name: Ham
+  m_EditorClassIdentifier: 
+  Name: Ham
+  Description: 
+  sprite: {fileID: 21300000, guid: fe20603ff44b8de4d9f17029e45cd6ad, type: 3}
+  itemTag: 3
+  Stackable: 0
+  MaxStackSize: 5
+  equipmentPrefab: {fileID: 2299811458106725878, guid: b9e22aa8d7104c544b8bb04df01d63c4, type: 3}

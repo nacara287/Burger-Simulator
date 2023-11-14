@@ -73,7 +73,7 @@ namespace EasyBuildSystem.Features.Runtime.Buildings.Placer.Editor
                 }
             }
 
-            if (Target.GetInputHandler != null)
+           /* if (Target.GetInputHandler != null)
             {
                 m_InputHandlerIndex = m_InputHandlers.IndexOf(Target.GetInputHandler.GetType());
                 Target.GetInputHandler.hideFlags = HideFlags.None;
@@ -81,7 +81,7 @@ namespace EasyBuildSystem.Features.Runtime.Buildings.Placer.Editor
             else
             {
                 m_InputHandlerIndex = m_InputHandlers.IndexOf(typeof(StandaloneInputHandler));
-            }
+            }*/
         }
 
         void OnDisable()
@@ -128,26 +128,26 @@ namespace EasyBuildSystem.Features.Runtime.Buildings.Placer.Editor
                 m_InputHandlerIndex = EditorGUILayout.Popup("Input Handler", m_InputHandlerIndex, m_Handlers);
                 if (EditorGUI.EndChangeCheck())
                 {
-                    if (Target.GetInputHandler != null)
+                 /*   if (Target.GetInputHandler != null)
                     {
                         DestroyImmediate(Target.GetInputHandler);
                     }
-
+                 */
                     if (m_InputHandlerEditor != null)
                     {
                         DestroyImmediate(m_InputHandlerEditor);
                         m_InputHandlerEditor = null;
                     }
-
+/*
                     Target.GetInputHandler = (BaseInputHandler)Target.gameObject.AddComponent(m_InputHandlers[m_InputHandlerIndex]);
                     Target.GetInputHandler.hideFlags = HideFlags.HideInInspector;
-
+*/
                     Repaint();
 
                     m_InputFoldout = true;
                 }
 
-                if (m_InputHandlerEditor == null)
+               /* if (m_InputHandlerEditor == null)
                 {
                     m_InputHandlerEditor = CreateEditor(Target.GetInputHandler);
                 }
@@ -155,7 +155,7 @@ namespace EasyBuildSystem.Features.Runtime.Buildings.Placer.Editor
                 {
                     m_InputHandlerEditor.OnInspectorGUI();
                 }
-
+               */
                 EditorUtility.SetDirty(target);
             }
 

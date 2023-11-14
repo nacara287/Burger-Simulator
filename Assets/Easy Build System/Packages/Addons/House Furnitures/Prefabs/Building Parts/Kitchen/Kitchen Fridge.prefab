@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 5340159720659321368}
   - component: {fileID: 5713259978557958253}
   - component: {fileID: -7938447271449088400}
+  - component: {fileID: 1239795334380095837}
+  - component: {fileID: 1732276608722419540}
+  - component: {fileID: 6861931266750680839}
   m_Layer: 0
   m_Name: Kitchen Fridge
   m_TagString: Untagged
@@ -28,14 +31,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2400826734108463579}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0.7187518, z: -0, w: -0.6952668}
+  m_LocalPosition: {x: 961.5896, y: 540.00006, z: 3.1425734}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1400467281137274455}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 268.097, z: 0}
 --- !u!114 &1884107487318397897
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,7 +146,76 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InventoryID: 
-  InventorySize: 15
+  InventoryName: Fridge
+  InventorySize: 27
+  Items: []
+--- !u!114 &1239795334380095837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2400826734108463579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 421738ef60e285e4890a47adf020c213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemData: {fileID: 11400000, guid: 596283762e78f674ab8e8ed84ca27427, type: 2}
+  Buttons: []
+  onGround: 1
+  StackSize: 1
+--- !u!114 &1732276608722419540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2400826734108463579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32ef392ea5f025444ab853a60eeef749, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonevent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -7938447271449088400}
+        m_TargetAssemblyTypeName: InventoryInfo, Assembly-CSharp
+        m_MethodName: ShowInventory
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  Key: 101
+  Text: Open Inventory
+  PushTime: 1
+--- !u!65 &6861931266750680839
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2400826734108463579}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1.8372803, z: 1}
+  m_Center: {x: 0, y: 0.9533081, z: 0}
 --- !u!1 &6420434170973067101
 GameObject:
   m_ObjectHideFlags: 0

@@ -36,7 +36,7 @@ namespace EasyBuildSystem.Examples.Bases.Scripts.FirstPerson
 		float m_Speed;
 		float m_VerticalVelocity;
 		readonly float m_TerminalVelocity = 53.0f;
-
+		Manager manager;
 		float m_JumpTimeoutDelta;
 		float m_FallTimeoutDelta;
 
@@ -53,6 +53,7 @@ namespace EasyBuildSystem.Examples.Bases.Scripts.FirstPerson
 
 		void Start()
 		{
+			manager = Manager.instance;
 			m_Controller = GetComponent<CharacterController>();
 
 			m_JumpTimeoutDelta = m_JumpTimeout;
@@ -61,10 +62,15 @@ namespace EasyBuildSystem.Examples.Bases.Scripts.FirstPerson
 
 		void Update()
 		{
-			JumpAndGravity();
-			GroundedCheck();
-			Move();
-		}
+			if (!manager.LockControls)
+			{
+              
+            
+                Move();
+            }
+            GroundedCheck();
+            JumpAndGravity();
+        }
 
 		void GroundedCheck()
 		{
