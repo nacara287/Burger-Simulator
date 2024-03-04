@@ -10,9 +10,11 @@ using Image = UnityEngine.UI.Image;
 public class CookingSystem : MonoBehaviour
 { public float CookSpeed = 5;
     public bool working;
-    public bool UIopened;
+
     public Transform CookItemPos;
- 
+    public GameObject FirseFX;
+     public float Fuel=0;
+    float fuelspend = 1;
     InventoryItem FuelItem;
 
     InventoryInfo Inventory;
@@ -28,46 +30,47 @@ public class CookingSystem : MonoBehaviour
  
  
 
-        if (UIopened)
-        {
-            if (working)
-            {
-                UIManager.instance.cookingUI.Fuel.color = Color.red;
-               
+       
+       if(FuelItem.myItem != null&&!working)
+            { bool havefood=false;
+            foreach(var item in Inventory.Items)
+            {if(item.myItem!=null)
+                if (item.myItem.equipmentPrefab.GetComponent<CookableItem>() != null)
+                {
+                    havefood = true;
+                    break;
+                }
+                  
             }
-            else
-            {
+            if (!havefood)
+                return;
+                Fuel = 100;
+                FuelItem.StackCount -= 1;
 
-                UIManager.instance.cookingUI.Fuel.color = Color.white;
-
+                UIManager.instance.cookingUI.InventoryUI.LoadInventory();
+                fuelspend = FuelItem.myItem.equipmentPrefab.GetComponent<FuelItem>().FuelSpend;
+                working = true;
             }
-            
-
-
-        }
-
-        if (FuelItem.myItem != null)
-        {
-
-
-            working = true;
-
-        }
-        else
-        {
-            working = false;
-
-        }
+     
+      
 
         if (working)
         {
-            
-            for(int i=1; i< Inventory.Items.Count;i++) {
+            Fuel -= fuelspend*Time.deltaTime;
+            if (Fuel <= 0)
+            {
+                working = false;return;
+
+            }
+
+           
+                for (int i=1; i< Inventory.Items.Count;i++) {
                 var CookItem = Inventory.Items[i];
                 if (CookItem.myItem != null)
                 {
                     if (CookItem.myItem.equipmentPrefab.GetComponent<CookableItem>() != null)
-                    { 
+                    {
+                      
                         if (CookItem.heat < CookItem.myItem.equipmentPrefab.GetComponent<CookableItem>().CookedHeat)
                         {
                               
@@ -97,12 +100,7 @@ public class CookingSystem : MonoBehaviour
 
             }
 
-            FuelItem.Condition -= FuelItem.myItem.equipmentPrefab.GetComponent<FuelItem>().FuelSpend * Time.deltaTime;
-            if (UIopened)
-            {if (UIManager.instance.cookingUI.InventoryUI.inventorySlots[0].myItem!=null)
-                UIManager.instance.cookingUI.InventoryUI.inventorySlots[0].myItem.Condition = FuelItem.Condition;
-
-            }
+        
         }
 
          
@@ -118,11 +116,11 @@ public class CookingSystem : MonoBehaviour
         var uiManager = UIManager.instance;
         uiManager.PlayerInventory.transform.GetChild(0).gameObject.SetActive(true);
         uiManager.cookingUI.gameObject.SetActive(true);
-
+        uiManager.cookingUI.cookingSystem = this;
         uiManager.cookingUI.InventoryUI.SetInventory(GetComponent<InventoryInfo>());
 
         Manager.instance.setLockControls(true);
-        UIopened = true;
+      
     }
 
  

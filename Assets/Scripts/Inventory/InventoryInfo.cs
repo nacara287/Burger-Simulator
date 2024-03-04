@@ -117,7 +117,8 @@ public class InventoryInfo : MonoBehaviour
         var uiManager = UIManager.instance;
 
         uiManager.ItemInventory.gameObject.SetActive(true);
- 
+
+        uiManager.PlayerInventory.transform.GetChild(0).gameObject.SetActive(true);
         uiManager.ItemInventory.SetInventory(this);
     
         Manager.instance.setLockControls(true);
@@ -141,6 +142,27 @@ public class InventoryInfo : MonoBehaviour
         }
         else
             Debug.Log("There is no save files to load!");
+    }
+    public void AddItemByInfo(Item info)
+    {
+        var inventoryitem = new InventoryItem();
+        inventoryitem.myItem = info;
+        inventoryitem.StackCount = 1;
+        for (int i = 0; i < Items.Count; i++)
+        {
+            if (Items[i].myItem == null)
+            {
+                Items[i] = inventoryitem;
+
+                break;
+
+            }
+
+
+        }
+
+        SaveInventory();
+        ReloadInventoryPlayer();
     }
     public void AddItem(ItemPrefabInfo info)
     {

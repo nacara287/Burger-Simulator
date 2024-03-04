@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class FuelItem : MonoBehaviour
 {
-    public float FuelSpend = 2;
+    public float FuelSpend= 2;
    
 }

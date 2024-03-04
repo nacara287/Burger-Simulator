@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4f01cccb2c080ea45b4d365239347695, type: 3}
-  m_Name: Log
+  m_Name: CraftingTable
   m_EditorClassIdentifier: 
-  Name: Log
+  Name: 
   Description: 
-  sprite: {fileID: 983273462, guid: 383aef37898fa624db3efdbee6c0df52, type: 3}
-  itemTag: 4
-  Stackable: 1
+  sprite: {fileID: 0}
+  itemTag: 0
+  Stackable: 0
   MaxStackSize: 10
-  equipmentPrefab: {fileID: 3958748493265957220, guid: bea8456bdc8ac3e44a30dbd643ef52dd, type: 3}
+  equipmentPrefab: {fileID: 0}

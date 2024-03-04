@@ -7,7 +7,7 @@ public class ItemPrefabInfo : MonoBehaviour
 {
     public Item  ItemData;
     public List<ItemButton> Buttons=new List<ItemButton>();
-    public bool onGround = false;
+    public bool onHand = false;
     public int StackSize = 1;
     // Start is called before the first frame update
     void Start()
@@ -18,7 +18,26 @@ public class ItemPrefabInfo : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {if (transform.root != null)
+        {
+            if (transform.root.GetComponent<PlayerItemManager>() != null)
+            {
+                onHand = true;
+
+            }
+            else
+            {
+                onHand = false;
+
+            }
+
+        }
+        else
+        {
+            onHand = false;
+        }
+           
+             
       
 
         

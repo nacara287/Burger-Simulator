@@ -9,10 +9,12 @@ public class UIManager : MonoBehaviour
     public Text ItemNameText;
  
     public GameObject E_Button;
+
     public InventoryViewer PlayerInventory;
     public InventoryViewer ItemInventory;
     public CookingUI cookingUI;
-  
+    public CraftingUI craftingUI;
+
     private void Awake()
     {if (instance != null)
             Destroy(this);

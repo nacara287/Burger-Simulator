@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1239795334380095837}
   - component: {fileID: 1732276608722419540}
   - component: {fileID: 6861931266750680839}
+  - component: {fileID: 949210361288221870}
   m_Layer: 0
   m_Name: Kitchen Fridge
   m_TagString: Untagged
@@ -163,7 +164,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ItemData: {fileID: 11400000, guid: 596283762e78f674ab8e8ed84ca27427, type: 2}
   Buttons: []
-  onGround: 1
+  onHand: 0
   StackSize: 1
 --- !u!114 &1732276608722419540
 MonoBehaviour:
@@ -216,6 +217,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1.8372803, z: 1}
   m_Center: {x: 0, y: 0.9533081, z: 0}
+--- !u!114 &949210361288221870
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2400826734108463579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 027dbcbacb43ed045aa0bb8127a48649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemsNeedForCraft:
+  - {x: 35966, y: 2}
 --- !u!1 &6420434170973067101
 GameObject:
   m_ObjectHideFlags: 0

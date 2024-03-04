@@ -200,8 +200,7 @@ public class InventoryViewer : MonoBehaviour
         uiManager.PlayerInventory.gameObject.transform.GetChild(0).gameObject.SetActive(false);
         manager.setLockControls(false);
         UIManager.instance.PlayerInventory.SaveInventory();
-        if (GetComponent<CookingSystem>() != null)
-            GetComponent<CookingSystem>().UIopened = false;
+   
 SaveInventory();
     }
 

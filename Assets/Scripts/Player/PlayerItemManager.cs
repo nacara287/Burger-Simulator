@@ -120,7 +120,7 @@ public class PlayerItemManager : MonoBehaviour
           
             obj.GetComponent<Rigidbody>().isKinematic = false;
             obj.GetComponent<ItemPrefabInfo>().StackSize = currentActiveSlot.myItem.StackCount;
-            obj.GetComponent<ItemPrefabInfo>().onGround = true;
+   
 
             GetComponent<InventoryInfo>().RemoveItem(Slots.IndexOf(currentActiveSlot));
 
@@ -246,7 +246,7 @@ public class PlayerItemManager : MonoBehaviour
         if (RaycastObject != null&&!manager.LockControls)
         {
             uiManager.ItemNameText.text = RaycastObject.GetComponent<ItemPrefabInfo>().ItemData.Name+" ("+ RaycastObject.GetComponent<ItemPrefabInfo>().StackSize + ")";
-            if (RaycastObject.GetComponent<ItemPrefabInfo>().onGround)
+            if (!RaycastObject.GetComponent<ItemPrefabInfo>().onHand)
             {
                
                 if (RaycastObject.GetComponent<ItemPrefabInfo>().Buttons.Count > 0)
